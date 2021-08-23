@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Delta&nbsp;-&nbsp;开箱即用的区块链隐私计算框架</title>
+    <meta name="description"
+        content="快速搭建隐私计算网络，实现用户数据的可用不可见，无需获取原始数据，也可使用全网的数据进行统计计算以及机器学习。平台可用于金融、医疗、政府、知识产权等领域，实现联合风控、联合科研、政府数据开放等需求，提升数据的价值。">
+    <meta name="keywords" content="Delta,隐私计算,Python,区块链,联邦学习,安全多方计算">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            width: 100%;
+            margin: 0;
+        }
+
+        a,
+        p,
+        span,
+        button {
+            font-family: 'PingFang SC', 'HanHei SC', 'Microsoft YaHei', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+        }
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        .clickable {
+            cursor: pointer;
+        }
+
+        .title_color {
+            color: #000000;
+        }
+
+        .detail_color {
+            color: #222222;
+        }
+
+        .footer_color {
+            color: #666666;
+        }
+
+        .bold {
+            font-weight: 500;
+        }
+
+        .normal {
+            font-weight: 400;
+        }
+
+        .thin {
+            font-weight: 300;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/300.css">
+    <link rel="stylesheet" href="./css/960.css">
+    <link rel="stylesheet" href="./css/1200.css">
+    <script type="text/javascript">
+        function blogIn(x) {
+            x.style.borderColor = "rgb(125, 208, 215)";
+            x.style.borderWidth = "2px";
+        }
+
+        function blogOut(x) {
+            x.style.borderColor = "rgba(125, 208, 215, 0.5)";
+            x.style.borderWidth = "1px"
+        }
+
+        function headIn(x) {
+            let child = x.firstElementChild;
+            child.style.visibility = "visible";
+        }
+
+        function headOut(x) {
+            let child = x.firstElementChild;
+            child.style.visibility = "hidden";
+
+        }
+
+        function scrollInto(element_id) {
+            let element = document.getElementById(element_id);
+            element.scrollIntoView()
+
+        }
+
+        function tryDemo() {
+            let quiz = document.getElementById("quiz");
+            quiz.style.display = "flex";
+            let btn = document.getElementById("submit_button");
+            console.log(btn.onclick)
+        }
+
+    </script>
+    <script type="text/javascript" async defer>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?93edeb718fb49854a88e9ba46d8d0d24";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+
+    </script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="header">
+        <img id="logo" src="./logo.svg"></img>
+        <span id="header_tabs">
+            <span class="header_tab clickable" onclick="scrollInto('description')">产品介绍
+                <span class="header_tab_img">
+                    <img src="./header_img.png" alt="">
+                </span>
+            </span>
+            <span class="header_tab bold title_color clickable" onclick="scrollInto('framework')">架构图
+                <span class="header_tab_img">
+                    <img src="./header_img.png" alt="">
+                </span>
+            </span>
+            <span class="header_tab bold title_color clickable" onclick="scrollInto('features')">技术特点
+                <span class="header_tab_img">
+                    <img src="./header_img.png" alt="">
+                </span>
+            </span>
+            <span class="header_tab bold title_color clickable" onclick="scrollInto('scene')">应用场景
+                <span class="header_tab_img">
+                    <img src="./header_img.png" alt="">
+                </span>
+            </span>
+            <span class="header_tab bold title_color clickable" onclick="scrollInto('blog')">专栏文章
+                <span class="header_tab_img">
+                    <img src="./header_img.png" alt="">
+                </span>
+            </span>
+        </span>
+
+    </div>
+
+    <div id="banner">
+        <div id="banner_content">
+            <p class="banner_big_title normal title_color">开箱即用的</p>
+            <p class="banner_big_title normal title_color">区块链隐私计算框架</p>
+            <p class="banner_small_title normal title_color">保护数据隐私，释放数据潜力</p>
+            <button id="demo_button" class="arrow_button clickable"
+                onclick="window.open('https://board.deltampc.com/')">在线Demo&nbsp;&nbsp;&nbsp;&rarr;</button>
+            <div id="link_buttons">
+                <button class="link_button clickable" onclick="window.open('https://github.com/delta-mpc')">
+                    <div class="link_img">
+                        <img src="./github.png" alt="">
+                    </div>
+                    <div class="link_text">Github</div>
+                </button>
+                <div id="link_button_sep"></div>
+                <button class="link_button clickable" onclick="window.open('https://docs.deltampc.com/')">
+                    <div class="link_img">
+                        <img src="./doc.png" alt="">
+                    </div>
+                    <div class="link_text">开发文档</div>
+                </button>
+                <div id="link_button_sep"></div>
+                <button class="link_button clickable" onclick="window.open('https://www.zhihu.com/column/blocktech')">
+                    <div class="link_img">
+                        <img src="./zhihu.png" alt="">
+                    </div>
+                    <div class="link_text">技术专栏</div>
+                </button>
+
+
+            </div>
+            <span id="banner_line">
+                <img src="./banner_line.png" alt="">
+            </span>
+
+        </div>
+
+        <div id="banner_img">
+            <img src="./banner.png" alt="">
+        </div>
+
+
+    </div>
+
+    <div id="description" class="section">
+        <p id="des_title" class="section_title">
+            Delta区块链隐私计算框架
+        </p>
+
+        <div id="des_main">
+            <div id="des_content">
+                <p class="des_text thin detail_color">
+                    Delta可以联合分散在各处的数据，进行统计计算以及机器学习，数据全程不会离开本地，实现了数据的可用不可见，可应用于金融、医疗、政府、知识产权等领域，实现联合风控、联合科研、政企数据连接等需求，充分发挥数据的价值。
+                </p>
+                <p class="des_text thin detail_color">
+                    Delta通过封装整合联邦学习、安全多方计算、差分隐私等最新的隐私计算技术，降低了开发门槛，使用者无需了解隐私计算技术，也可快速实现计算需求。
+                    用户可以快速地部署Delta节点，搭建隐私计算网络，联合多方数据，完成隐私计算。</p>
+                <p class="des_text thin detail_color">
+                    Delta保证了计算结果的可信性，在用户无法获取原始数据的前提下，通过集成的区块链和零知识证明技术验证计算结果的正确性。</p>
+            </div>
+            <span id="des_img">
+                <img src="./des_line.png" alt="">
+            </span>
+        </div>
+
+    </div>
+
+
+    <div id="framework" class="section">
+        <p id="framework_title" class="section_title">架构图</p>
+        <div id="framework_img">
+            <img src="./framework.png" alt="" />
+        </div>
+    </div>
+
+
+    <div id="features" class="section">
+        <!-- <p id="features_title" class="section_title">平台优势</p> -->
+        <div class="feature_tab">
+            <div class="feature_tab_icon">
+                <img src="./feature_icon1.png" alt="">
+            </div>
+
+            <div class="feature_tab_main">
+                <p class="feature_tab_text1 normal detail_color">无需了解底层原理，直接使用Python开发</p>
+                <p class="feature_tab_text2 thin detail_color">
+                    数据使用者无需了解隐私计算算法，只需编写传统的统计算法、机器学习算法，平台会自动将其转换为联邦统计、横向联邦学习或纵向联邦学习，在多节点上完成隐私计算。</p>
+                <p class="feature_tab_text2 thin detail_color">
+                    采用在数据/人工智能领域广泛使用的Python语言进行任务编写，开发者可以实现复杂的算法，灵活性高；迁移成本低，已有的代码经过简单改造，就可以直接使用。系统自动对计算任务代码进行合规性检查，以保障数据隐私安全。
+                </p>
+
+                <div class="feature_tab_img">
+                    <img src="./feature_img1.png" alt="" />
+                </div>
+            </div>
+        </div>
+        <div class="feature_sep">
+            <img src="./feature_sep.png" alt="">
+        </div>
+        <div class="feature_tab">
+            <div class="feature_tab_icon">
+                <img src="./feature_icon2.png" alt="">
+            </div>
+            <div class="feature_tab_main">
+                <p class="feature_tab_text1 normal detail_color">通过区块链保证计算结果可信</p>
+                <p class="feature_tab_text2 thin detail_color">
+                    通过区块链和零知识证明保证计算结果可信性。数据使用者在无法看到原始数据的情况下，可以相信计算任务得到了正确的执行，并且采用的数据不是伪造的。
+                </p>
+                <div class="feature_tab_img">
+                    <img src="./feature_img2.png" alt="" />
+                </div>
+            </div>
+        </div>
+        <div class="feature_sep">
+            <img src="./feature_sep.png" alt="">
+        </div>
+
+        <div class="feature_tab">
+            <div class="feature_tab_icon">
+                <img src="./feature_icon3.png" alt="">
+            </div>
+            <div class="feature_tab_main">
+                <p class="feature_tab_text1 normal detail_color">全套图形化调试工具，简化开发流程</p>
+                <p class="feature_tab_text2 thin detail_color">提供日志系统、调试工具、图形化结果面板等一系列配套的开发组件，简化开发流程，提高效率，给开发者提供良好的开发体验。
+                </p>
+                <div class="feature_tab_img">
+                    <img src="./feature_img3.png" alt="" />
+                </div>
+
+            </div>
+        </div>
+        <div class="feature_sep">
+            <img src="./feature_sep.png" alt="">
+        </div>
+
+        <div class="feature_tab">
+            <div class="feature_tab_icon">
+                <img src="./feature_icon4.png" alt="">
+            </div>
+            <div class="feature_tab_main">
+                <p class="feature_tab_text1 normal detail_color">Docker一键部署，和Kubernetes无缝集成</p>
+                <p class="feature_tab_text2 thin detail_color">
+                    Docker化部署，支持多种操作系统，部署方便，可根据用户业务需求，进行私有化部署。
+                </p>
+                <div class="feature_tab_img">
+                    <img src="./feature_img4.png" alt="" />
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="scene" class="section">
+        <p id="scene_title" class="section_title">应用场景</p>
+        <div id="scene_content">
+            <div class="scene_tab">
+                <div class="scene_tab_img">
+                    <img src="./scene_img1.png" alt="" />
+                </div>
+                <p class="scene_tab_text1 normal detail_color">政企数据连接</p>
+                <p class="scene_tab_text2 thin detail_color">
+                    各个企业的财务报表、运营数据，都属于隐私数据，无法公开。但是政府需要获取各家企业的真实数据，才能了解辖区内的企业、行业整体情况，并制定相应的政策。通过搭建隐私计算平台，政府可直接在隐私计算平台上统计平台中各家企业的数据，使企业无需再公开提交自己的隐私数据，既保护了企业的隐私数据，政府也得到了制定政策所需的统计数据。
+                </p>
+            </div>
+            <div class="scene_tab">
+                <div class="scene_tab_img">
+                    <img src="./scene_img2.png" alt="" />
+                </div>
+                <p class="scene_tab_text1 normal detail_color">智能医疗建模</p>
+                <p class="scene_tab_text2 thin detail_color">
+                    现在，越来越多的机构开始尝试使用人工智能技术，构建智能医疗模型，进行辅助诊断。构建医疗模型，需要使用大量的医疗数据，一家医疗机构的数据明显不足，然而各家医疗机构的病人信息、医疗记录，都属于隐私数据，无法共享。通过隐私计算平台，可以联合多家医疗机构的医疗数据，使用横向或者纵向联邦学习方式训练医疗模型，保障各个机构医疗数据的隐私，同时提升医疗模型的效果。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="blog" class="section">
+        <p id="blog_title" class="section_title">专栏文章</p>
+        <div id="blog_main">
+            <div class="blog_wrapper">
+                <div class="blog_tab clickable" onclick="window.open('https://zhuanlan.zhihu.com/p/380037249');"
+                    onmouseover="blogIn(this)" onmouseout="blogOut(this)">
+                    <div class="blog_img">
+                        <img src="./blog_img3.png" alt="">
+                    </div>
+                    <p class="blog_article_title bold detail_color">安全多方计算详解：MPC技术路线及MASCOT协议（一）</p>
+                    <p class="blog_detail thin detail_color">
+                        <span>2021年6月11日</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="blog_wrapper">
+                <div class="blog_tab clickable" onclick="window.open('https://zhuanlan.zhihu.com/p/367477035');"
+                    onmouseover="blogIn(this)" onmouseout="blogOut(this)">
+                    <div class="blog_img">
+                        <img src="./blog_img1.webp" alt="">
+                    </div>
+                    <p class="blog_article_title bold detail_color">隐私计算关键技术：隐私集合求交（PSI）原理介绍</p>
+                    <p class="blog_detail thin detail_color">
+                        <span>2021年4月24日</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="blog_wrapper">
+                <div class="blog_tab clickable" onclick="window.open('https://zhuanlan.zhihu.com/p/364257618');"
+                    onmouseover="blogIn(this)" onmouseout="blogOut(this)">
+                    <div class="blog_img">
+                        <img src="./blog_img6.webp" alt="">
+                    </div>
+                    <p class="blog_article_title bold detail_color">隐私计算实例：详解一个纵向联邦学习的场景和技术实现</p>
+                    <p class="blog_detail thin detail_color">
+                        <span>2021年4月12日</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="blog_wrapper">
+                <div class="blog_tab clickable" onclick="window.open('https://zhuanlan.zhihu.com/p/362936724');"
+                    onmouseover="blogIn(this)" onmouseout="blogOut(this)">
+                    <div class="blog_img">
+                        <img src="./blog_img5.webp" alt="">
+                    </div>
+                    <p class="blog_article_title bold detail_color">万字长文详解零知识证明协议——以zk-STARKs为例</p>
+                    <p class="blog_detail thin detail_color">
+                        <span>2021年4月10日</span>
+                    </p>
+                </div>
+            </div>
+            <div class="blog_wrapper">
+                <div class="blog_tab clickable" onclick="window.open('https://zhuanlan.zhihu.com/p/203315316');"
+                    onmouseover="blogIn(this)" onmouseout="blogOut(this)">
+                    <div class="blog_img">
+                        <img src="./blog_img2.jpg" alt="">
+                    </div>
+                    <p class="blog_article_title bold detail_color">隐私计算+区块链：一次具体场景下的详细应用</p>
+                    <p class="blog_detail thin detail_color">
+                        <span>2020年8月28日</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="blog_wrapper">
+                <div class="blog_tab clickable" onclick="window.open('https://zhuanlan.zhihu.com/p/90625268');"
+                    onmouseover="blogIn(this)" onmouseout="blogOut(this)">
+                    <div class="blog_img">
+                        <img src="./blog_img4.jpg" alt="">
+                    </div>
+                    <p class="blog_article_title bold detail_color">基于零知识证明的数字资产私密发布和授权协议</p>
+                    <p class="blog_detail thin detail_color">
+                        <span>2019年11月7日</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <button id="blog_button" class="arrow_button clickable"
+            onclick="window.open('https://www.zhihu.com/column/blocktech')">查看更多&nbsp;&nbsp;&nbsp;&rarr;</button>
+    </div>
+
+    <div id="contact" class="section">
+        <div id="contact_main">
+            <div id="contact_img">
+                <img src="./contact.png" alt="" />
+            </div>
+            <div id="contact_text">
+                <p id="contact_title" class="section_title">欢迎联系</p>
+                <p class="foot_text bold footer_color">&copy;2021 上海因问科技有限公司 All rights reserved</p>
+                <a class="foot_text bold footer_color" href="https://beian.miit.gov.cn"
+                    target="_blank">沪ICP备2021016007号</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="" async defer></script>
+</body>
+
+</html>
