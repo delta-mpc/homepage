@@ -1,5 +1,5 @@
 # Delta Homepage
 
-The web page for Delta's official home.
+Source code for Delta's official website.
 
 [https://deltampc.com](https://deltampc.com)
