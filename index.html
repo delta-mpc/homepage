@@ -1,18 +1,12 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-
-
+<html lang="zh">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Delta&nbsp;-&nbsp;开箱即用的区块链隐私计算框架</title>
     <meta name="description"
         content="快速搭建隐私计算网络，实现用户数据的可用不可见，无需获取原始数据，也可使用全网的数据进行统计计算以及机器学习。平台可用于金融、医疗、政府、知识产权等领域，实现联合风控、联合科研、政府数据开放等需求，提升数据的价值。">
-    <meta name="keywords" content="Delta,隐私计算,Python,区块链,联邦学习,安全多方计算">
+    <meta name="keywords" content="Delta,隐私计算,Python,区块链,联邦学习,安全多方计算,差分隐私,可信计算,零知识证明">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
@@ -66,6 +60,9 @@
 
         a:hover {
             text-decoration: underline;
+        }
+        .link_button:hover,.header_tab:hover {
+            text-decoration: none;
         }
     </style>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
@@ -122,7 +119,7 @@
 
 <body>
     <div id="header">
-        <img id="logo" src="./img/logo.svg"></img>
+        <img id="logo" src="./img/logo.svg" />
         <span id="header_tabs">
             <span class="header_tab clickable" onclick="scrollInto('description')">产品介绍
                 <span class="header_tab_img">
@@ -149,6 +146,11 @@
                     <img src="./img/header_img.png" alt="">
                 </span>
             </span>
+            <a class="header_tab bold title_color clickable" href="/en">English
+                <span class="header_tab_img">
+                    <img src="./img/header_img.png" alt="">
+                </span>
+            </a>
         </span>
 
     </div>
@@ -159,30 +161,28 @@
             <p class="banner_big_title normal title_color">区块链隐私计算框架</p>
             <p class="banner_small_title normal title_color">保护数据隐私，释放数据潜力</p>
             <button id="demo_button" class="arrow_button clickable"
-                onclick="window.open('https://board.deltampc.com/')">在线Demo&nbsp;&nbsp;&nbsp;&rarr;</button>
+                onclick="window.open('https://board.deltampc.com/')">Delta在线&nbsp;&nbsp;&nbsp;&rarr;</button>
             <div id="link_buttons">
-                <button class="link_button clickable" onclick="window.open('https://github.com/delta-mpc')">
+                <a class="link_button clickable" href="https://github.com/delta-mpc" target="_blank">
                     <div class="link_img">
                         <img src="./img/github.png" alt="">
                     </div>
                     <div class="link_text">Github</div>
-                </button>
+                </a>
                 <div id="link_button_sep"></div>
-                <button class="link_button clickable" onclick="window.open('https://docs.deltampc.com/')">
+                <a class="link_button clickable" href="https://docs.deltampc.com" target="_blank">
                     <div class="link_img">
                         <img src="./img/doc.png" alt="">
                     </div>
                     <div class="link_text">开发文档</div>
-                </button>
+                </a>
                 <div id="link_button_sep"></div>
-                <button class="link_button clickable" onclick="window.open('https://www.zhihu.com/column/blocktech')">
+                <a class="link_button clickable" href="https://www.zhihu.com/column/blocktech" target="_blank">
                     <div class="link_img">
                         <img src="./img/zhihu.png" alt="">
                     </div>
                     <div class="link_text">技术专栏</div>
-                </button>
-
-
+                </a>
             </div>
             <span id="banner_line">
                 <img src="./img/banner_line.png" alt="">
@@ -230,7 +230,6 @@
 
 
     <div id="features" class="section">
-        <!-- <p id="features_title" class="section_title">平台优势</p> -->
         <div class="feature_tab">
             <div class="feature_tab_icon">
                 <img src="./img/feature_icon1.png" alt="">
@@ -421,16 +420,12 @@
             </div>
             <div id="contact_text">
                 <p id="contact_title" class="section_title">欢迎联系</p>
-                <p class="foot_text bold footer_color">&copy;2021 上海因问科技有限公司 All rights reserved</p>
+                <p class="foot_text bold footer_color">&copy; 2021 上海因问科技有限公司. All Rights Reserved.</p>
                 <a class="foot_text bold footer_color" href="https://beian.miit.gov.cn"
                     target="_blank">沪ICP备2021016007号</a>
             </div>
         </div>
     </div>
-
-
-
-    <script src="" async defer></script>
 </body>
 
 </html>
