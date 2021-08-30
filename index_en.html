@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Delta&nbsp;|&nbsp;Out-of-the-Box Blockchain-powered Verifiable PPC Framework</title>
+    <meta name="description"
+          content="Delta performs statistical and machine learning computations jointly on data
+                possessed by a group of data holders while keeping the data private for each of them. By encapsulating modern Privacy-Preserving Computation techniques inside,
+                Delta doesn't require developers to have any knowledge on PPC.
+                Just write computation task in traditional ways, and the rests are taken care of by Delta. The original data is never accessible to the developer.
+                Delta integrates Blockchain and Zero Knowledge Proof so that the developer could verify
+                that the computation is actually performed as designed on the required data.">
+    <meta name="keywords" content="Delta,Privacy Preserving Computation,PPC,Multi Party Computation,MPC,SMPC,SMC,Federated Learning,FL,Verifiable Computation,Python,Blockchain,Zero Knowledge Proof,ZKP">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            width: 100%;
+            margin: 0;
+        }
+
+        a,
+        p,
+        span,
+        button {
+            font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+        }
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        .clickable {
+            cursor: pointer;
+        }
+
+        .title_color {
+            color: #000000;
+        }
+
+        .detail_color {
+            color: #222222;
+        }
+
+        .footer_color {
+            color: #666666;
+        }
+
+        .bold {
+            font-weight: 500;
+        }
+
+        .normal {
+            font-weight: 400;
+        }
+
+        .thin {
+            font-weight: 300;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        .link_button:hover {
+            text-decoration: none;
+        }
+    </style>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/300.css">
+    <link rel="stylesheet" href="./css/960.css">
+    <link rel="stylesheet" href="./css/1200.css">
+    <link rel="stylesheet" href="./css/en.css">
+    <script type="text/javascript">
+        function blogIn(x) {
+            x.style.borderColor = "rgb(125, 208, 215)";
+            x.style.borderWidth = "2px";
+        }
+
+        function blogOut(x) {
+            x.style.borderColor = "rgba(125, 208, 215, 0.5)";
+            x.style.borderWidth = "1px"
+        }
+
+        function headIn(x) {
+            let child = x.firstElementChild;
+            child.style.visibility = "visible";
+        }
+
+        function headOut(x) {
+            let child = x.firstElementChild;
+            child.style.visibility = "hidden";
+
+        }
+
+        function scrollInto(element_id) {
+            let element = document.getElementById(element_id);
+            element.scrollIntoView()
+
+        }
+
+        function tryDemo() {
+            let quiz = document.getElementById("quiz");
+            quiz.style.display = "flex";
+            let btn = document.getElementById("submit_button");
+            console.log(btn.onclick)
+        }
+
+    </script>
+</head>
+
+<body>
+<div id="header">
+    <img id="logo" src="./img/logo.svg" />
+    <span id="header_tabs">
+            <span class="header_tab clickable" onclick="scrollInto('description')">Overview
+                <span class="header_tab_img">
+                    <img src="./img/header_img.png" alt="">
+                </span>
+            </span>
+            <span class="header_tab bold title_color clickable" onclick="scrollInto('framework')">Architecture
+                <span class="header_tab_img">
+                    <img src="./img/header_img.png" alt="">
+                </span>
+            </span>
+            <span class="header_tab bold title_color clickable" onclick="scrollInto('features')">Features
+                <span class="header_tab_img">
+                    <img src="./img/header_img.png" alt="">
+                </span>
+            </span>
+            <span class="header_tab bold title_color clickable" onclick="scrollInto('contact')">Community
+                <span class="header_tab_img">
+                    <img src="./img/header_img.png" alt="">
+                </span>
+            </span>
+        </span>
+</div>
+
+<div id="banner">
+    <div id="banner_content">
+        <p class="banner_big_title normal title_color">Out of the Box, Blockchain Powered</p>
+        <p class="banner_big_title normal title_color">Verifiable PPC Framework</p>
+        <p class="banner_small_title normal title_color">Release the full power of data</p>
+        <button id="demo_button" class="arrow_button clickable"
+                onclick="window.open('https://board.deltampc.com/')">Delta Online&nbsp;&nbsp;&nbsp;&rarr;</button>
+        <div id="link_buttons">
+            <a class="link_button clickable" href="https://github.com/delta-mpc" target="_blank">
+                <div class="link_img">
+                    <img src="./img/github.png" alt="">
+                </div>
+                <div class="link_text">Github</div>
+            </a>
+            <div id="link_button_sep"></div>
+            <a class="link_button clickable" href="https://docs.deltampc.com/v/en" target="_blank">
+                <div class="link_img">
+                    <img src="./img/doc.png" alt="">
+                </div>
+                <div class="link_text">Docs</div>
+            </a>
+            <div id="link_button_sep"></div>
+            <a class="link_button clickable" href="https://join.slack.com/t/delta-mpc/shared_invite/zt-uaqm185x-52oCXcxoYvRlFwEoMUC8Tw" target="_blank">
+                <div class="link_img">
+                    <img src="./img/slack.png" alt="">
+                </div>
+                <div class="link_text">Slack</div>
+            </a>
+
+        </div>
+        <span id="banner_line">
+                <img src="./img/banner_line.png" alt="">
+            </span>
+
+    </div>
+
+    <div id="banner_img">
+        <img src="./img/banner.png" alt="">
+    </div>
+
+
+</div>
+
+<div id="description" class="section">
+    <p id="des_title" class="section_title">
+        An Open Source Verifiable PPC Framework
+    </p>
+
+    <div id="des_main">
+        <div id="des_content">
+            <p class="des_text thin detail_color">
+                Delta performs statistical and machine learning computations jointly on data
+                possessed by a group of data holders while keeping the data private for each of them.
+                Delta is useful in a lot of scenarios such as financial risk assessment jointly
+                on private data from several banks,
+                or patient health condition prediction from data of several hospitals.
+            </p>
+            <p class="des_text thin detail_color">
+                By encapsulating modern Privacy-Preserving Computation techniques inside,
+                Delta doesn't require developers to have any knowledge on PPC.
+                Just write computation task in traditional ways, and the rests are taken care of by Delta.</p>
+            <p class="des_text thin detail_color">
+                The original data is never accessible to the developer.
+                Delta integrates Blockchain and Zero Knowledge Proof so that the developer could verify
+                that the computation is actually performed as designed on the required data.</p>
+        </div>
+        <span id="des_img">
+                <img src="./img/des_line.png" alt="">
+            </span>
+    </div>
+
+</div>
+
+
+<div id="framework" class="section">
+    <p id="framework_title" class="section_title">System Architecture</p>
+    <div id="framework_img">
+        <img src="./img/arch_en.png" alt="" />
+    </div>
+</div>
+
+
+<div id="features" class="section">
+    <div class="feature_tab">
+        <div class="feature_tab_icon">
+            <img src="./img/feature_icon1.png" alt="">
+        </div>
+
+        <div class="feature_tab_main">
+            <p class="feature_tab_text1 normal detail_color">Write Task in Python. No Prior Knowledge on PPC Required.</p>
+            <p class="feature_tab_text2 thin detail_color">
+                Developers just write traditional machine learning and statistical tasks.
+                Delta determines the task type by checking the distribution status of the data required by the task,
+                and transforms the task into horizontal/vertical federated learning,
+                or federated analytics task and executes it on multiple nodes in the network.</p>
+            <p class="feature_tab_text2 thin detail_color">
+                The task is written in Python, which is widely used in the industry of data and AI.
+                Popular frameworks are supported to write complex algorithms.
+                Existing codes can be used with little modification.
+                Delta ensures the code is secure before execution on host machine.
+            </p>
+
+            <div class="feature_tab_img">
+                <img src="./img/feature_img1.png" alt="" />
+            </div>
+        </div>
+    </div>
+    <div class="feature_sep">
+        <img src="./img/feature_sep.png" alt="">
+    </div>
+    <div class="feature_tab">
+        <div class="feature_tab_icon">
+            <img src="./img/feature_icon2.png" alt="">
+        </div>
+        <div class="feature_tab_main">
+            <p class="feature_tab_text1 normal detail_color">Computation is Verifiable using Blockchain and ZKP.</p>
+            <p class="feature_tab_text2 thin detail_color">
+                The original data is never accessible to the developers.
+                Delta integrates Blockchain and Zero Knowledge Proof so that
+                the developer could verify that the computation is performed exactly as designed,
+                and on the real data.
+            </p>
+            <div class="feature_tab_img">
+                <img src="./img/feature_img2.png" alt="" />
+            </div>
+        </div>
+    </div>
+    <div class="feature_sep">
+        <img src="./img/feature_sep.png" alt="">
+    </div>
+
+    <div class="feature_tab">
+        <div class="feature_tab_icon">
+            <img src="./img/feature_icon3.png" alt="">
+        </div>
+        <div class="feature_tab_main">
+            <p class="feature_tab_text1 normal detail_color">Toolchains to Ease the Development Workflow.</p>
+            <p class="feature_tab_text2 thin detail_color">
+                GUI and IDE supports coding and debugging online.
+                Fully featured debug tools and log system makes the task development friendly and efficient.
+            </p>
+            <div class="feature_tab_img">
+                <img src="./img/feature_img3.png" alt="" />
+            </div>
+
+        </div>
+    </div>
+    <div class="feature_sep">
+        <img src="./img/feature_sep.png" alt="">
+    </div>
+
+    <div class="feature_tab">
+        <div class="feature_tab_icon">
+            <img src="./img/feature_icon4.png" alt="">
+        </div>
+        <div class="feature_tab_main">
+            <p class="feature_tab_text1 normal detail_color">One-click Deployment with Docker and Kubernetes.</p>
+            <p class="feature_tab_text2 thin detail_color">
+                Could be easily deployed with only 1-click.
+                Various of operating systems and environments are supported.
+            </p>
+            <div class="feature_tab_img">
+                <img src="./img/feature_img4.png" alt="" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contact" class="section">
+    <div id="contact_main">
+        <div id="contact_img">
+            <img src="./img/slack-logo.svg" alt="Slack" width="150" height="150" />
+        </div>
+        <div id="contact_text">
+            <a id="contact_title" class="section_title" href="https://join.slack.com/t/delta-mpc/shared_invite/zt-uaqm185x-52oCXcxoYvRlFwEoMUC8Tw" target="_blank">Join the Community</a>
+            <p class="foot_text bold footer_color">&copy; 2021 Hetutec. All Rights Reserved.</p>
+        </div>
+    </div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSHX7K0N9P"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JSHX7K0N9P');
+</script>
+</body>
+</html>
+
